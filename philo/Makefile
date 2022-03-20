@@ -6,7 +6,7 @@
 #    By: dcorenti <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/18 17:35:30 by dcorenti          #+#    #+#              #
-#    Updated: 2022/03/18 18:40:27 by dcorenti         ###   ########.fr        #
+#    Updated: 2022/03/20 05:05:40 by dcorenti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,11 +16,15 @@ CO_DEFAULT		= 	\033[0m
 
 NAME 			= 	philo
 
-SRCS			= 	main.c \
-					errors.c \
-					utils.c \
-					check_args.c \
-		
+SRCS			= 	main.c 			\
+					errors.c 		\
+					utils.c 		\
+					check_args.c 	\
+					action.c		\
+					ft_atoi.c 		\
+					init.c 			\
+					launcher.c 		\
+							
 CC 				= gcc
 
 FLAGS 			= -Wall -Wextra -Werror

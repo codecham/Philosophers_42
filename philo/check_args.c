@@ -6,7 +6,7 @@
 /*   By: dcorenti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 18:09:19 by dcorenti          #+#    #+#             */
-/*   Updated: 2022/03/18 18:43:32 by dcorenti         ###   ########.fr       */
+/*   Updated: 2022/03/20 00:39:13 by dcorenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ void	ft_is_int(char *number)
 			exit_message("Arguments must be positives numbers");
 		i++;
 	}
+	if (i == 1 && number[0] == '0')
+		exit_message("Arguments can't be zero");
 	if (i > 10)
 		exit_message("Arguments must be a integer");
 	if (i == 10)
