@@ -6,7 +6,7 @@
 /*   By: dcorenti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 19:26:16 by dcorenti          #+#    #+#             */
-/*   Updated: 2022/03/21 04:26:45 by dcorenti         ###   ########.fr       */
+/*   Updated: 2022/03/25 00:51:00 by dcorenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,12 @@ int	init_mutex(t_data *data)
 		return (1);
 	if (pthread_mutex_init(&(data->check_eat), NULL))
 		return (1);
-	return(0);
+	return (0);
 }
 
 void	init_philo(t_data *data)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i < data->nb_philo)

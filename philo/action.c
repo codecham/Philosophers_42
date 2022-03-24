@@ -6,7 +6,7 @@
 /*   By: dcorenti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/20 02:12:32 by dcorenti          #+#    #+#             */
-/*   Updated: 2022/03/25 00:40:22 by dcorenti         ###   ########.fr       */
+/*   Updated: 2022/03/25 00:49:03 by dcorenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	philo_eat(t_philosopher *philo)
 {
-	t_data *data;
+	t_data	*data;
 
 	data = philo->data;
 	pthread_mutex_lock(&(data->forks[philo->left_fork_id]));
@@ -29,12 +29,12 @@ void	philo_eat(t_philosopher *philo)
 	philo->nb_of_eat++;
 	action_print(data, philo->id, "is sleeping");
 	pthread_mutex_unlock(&(data->forks[philo->left_fork_id]));
-	pthread_mutex_unlock(&(data->forks[philo->right_fork_id]));	
+	pthread_mutex_unlock(&(data->forks[philo->right_fork_id]));
 }
 
 void	philo_sleep(t_data *data, long long time)
 {
-	long long i;
+	long long	i;
 
 	i = timestamp();
 	while (data->is_dead == 0 && data->all_eat < data->nb_philo)

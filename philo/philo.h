@@ -6,7 +6,7 @@
 /*   By: dcorenti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 17:37:59 by dcorenti          #+#    #+#             */
-/*   Updated: 2022/03/25 00:02:17 by dcorenti         ###   ########.fr       */
+/*   Updated: 2022/03/25 00:55:12 by dcorenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,13 @@
 # include <pthread.h>
 # include <limits.h>
 
-struct s_data;
+struct	s_data;
 
 typedef struct s_philosopher
 {
 	int				id;
 	int				left_fork_id;
-	int 			right_fork_id;
+	int				right_fork_id;
 	int				nb_of_eat;
 	long long		last_eat;
 	struct s_data	*data;
@@ -34,16 +34,16 @@ typedef struct s_philosopher
 
 }	t_philosopher;
 
-typedef struct	s_data
+typedef struct s_data
 {
 	int				nb_philo;
 	int				time_die;
 	int				time_eat;
 	int				time_sleep;
-	int 			max_eat;
+	int				max_eat;
 	int				is_dead;
 	int				all_eat;
-	pthread_mutex_t *forks;
+	pthread_mutex_t	*forks;
 	pthread_mutex_t	writing;
 	pthread_mutex_t	check_eat;
 	long long		first_time;
@@ -63,6 +63,5 @@ void		action_print(t_data *data, int id, char *str);
 void		philo_sleep(t_data *data, long long time);
 void		philo_eat(t_philosopher *philo);
 void		launcher(t_data *data);
-
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: dcorenti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 18:09:19 by dcorenti          #+#    #+#             */
-/*   Updated: 2022/03/20 00:39:13 by dcorenti         ###   ########.fr       */
+/*   Updated: 2022/03/25 00:49:57 by dcorenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_is_int(char *number)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (number[i])
@@ -36,7 +36,7 @@ void	ft_is_int(char *number)
 
 void	check_args(int argc, char **argv)
 {
-	int i;
+	int	i;
 
 	i = 1;
 	if (argc != 5 && argc != 6)
