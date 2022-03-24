@@ -6,7 +6,7 @@
 /*   By: dcorenti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/20 05:16:54 by dcorenti          #+#    #+#             */
-/*   Updated: 2022/03/20 19:37:17 by dcorenti         ###   ########.fr       */
+/*   Updated: 2022/03/21 05:45:06 by dcorenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	*routine(void *v_philo)
 			data->all_eat++;
 			break ;
 		}
-		action_print(data, philo->id, "is sleeping");
+		// action_print(data, philo->id, "is sleeping");
 		philo_sleep(data, data->time_sleep);
 		action_print(data, philo->id, "is thinking");
 	}
@@ -48,7 +48,7 @@ void	dead_check(t_data *data, t_philosopher *philo)
 			pthread_mutex_lock(&(data->check_eat));
 			if (time_diff(philo[i].last_eat, timestamp()) > data->time_die)
 			{
-				action_print(data, philo[i].id, "is die");
+				action_print(data, philo[i].id, "died");
 				data->is_dead = 1;
 			}
 			pthread_mutex_unlock(&(data->check_eat));
@@ -59,7 +59,7 @@ void	dead_check(t_data *data, t_philosopher *philo)
 		if (data->nb_philo == data->all_eat || data->is_dead != 0)
 			break ;
 	}
-	printf("all_eat = %d - max_eat = %d\n", data->all_eat, data->max_eat);
+	//printf("all_eat = %d - max_eat = %d\n", data->all_eat, data->max_eat);
 }
 
 void	exit_launcher(t_data *data, t_philosopher *philo)

@@ -6,7 +6,7 @@
 /*   By: dcorenti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 17:37:59 by dcorenti          #+#    #+#             */
-/*   Updated: 2022/03/20 14:45:20 by dcorenti         ###   ########.fr       */
+/*   Updated: 2022/03/25 00:02:17 by dcorenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void		exit_free(t_data *data, char *message);
 long long	time_diff(long long past, long long present);
 long long	timestamp(void);
 void		action_print(t_data *data, int id, char *str);
-void		philo_sleep(t_data *data, int time);
+void		philo_sleep(t_data *data, long long time);
 void		philo_eat(t_philosopher *philo);
 void		launcher(t_data *data);
 

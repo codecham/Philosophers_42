@@ -6,7 +6,7 @@
 /*   By: dcorenti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/20 02:12:32 by dcorenti          #+#    #+#             */
-/*   Updated: 2022/03/20 19:47:51 by dcorenti         ###   ########.fr       */
+/*   Updated: 2022/03/25 00:40:22 by dcorenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,14 +27,22 @@ void	philo_eat(t_philosopher *philo)
 	pthread_mutex_unlock(&(data->check_eat));
 	philo_sleep(data, data->time_eat);
 	philo->nb_of_eat++;
+	action_print(data, philo->id, "is sleeping");
 	pthread_mutex_unlock(&(data->forks[philo->left_fork_id]));
 	pthread_mutex_unlock(&(data->forks[philo->right_fork_id]));	
 }
 
-void	philo_sleep(t_data *data, int time)
+void	philo_sleep(t_data *data, long long time)
 {
-	(void)data;
-	usleep(time * 1000);
+	long long i;
+
+	i = timestamp();
+	while (data->is_dead == 0 && data->all_eat < data->nb_philo)
+	{
+		if (time_diff(i, timestamp()) >= time)
+			break ;
+		usleep(50);
+	}
 }
 
 void	action_print(t_data *data, int id, char *str)
