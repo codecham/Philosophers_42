@@ -6,7 +6,7 @@
 /*   By: dcorenti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/20 02:12:32 by dcorenti          #+#    #+#             */
-/*   Updated: 2022/03/25 00:49:03 by dcorenti         ###   ########.fr       */
+/*   Updated: 2022/03/25 01:10:28 by dcorenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ void	philo_eat(t_philosopher *philo)
 	pthread_mutex_lock(&(data->check_eat));
 	philo->last_eat = timestamp();
 	pthread_mutex_unlock(&(data->check_eat));
-	philo_sleep(data, data->time_eat);
 	philo->nb_of_eat++;
+	philo_sleep(data, data->time_eat);
 	action_print(data, philo->id, "is sleeping");
 	pthread_mutex_unlock(&(data->forks[philo->left_fork_id]));
 	pthread_mutex_unlock(&(data->forks[philo->right_fork_id]));

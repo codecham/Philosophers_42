@@ -6,7 +6,7 @@
 /*   By: dcorenti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/20 05:16:54 by dcorenti          #+#    #+#             */
-/*   Updated: 2022/03/25 00:53:07 by dcorenti         ###   ########.fr       */
+/*   Updated: 2022/03/25 00:58:41 by dcorenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ void	dead_check(t_data *data, t_philosopher *philo)
 	}
 }
 
-void	exit_launcher(t_data *data, t_philosopher *philo)
+void	exit_launcher(t_data *data)
 {
 	int	i;
 
@@ -91,6 +91,6 @@ void	launcher(t_data *data)
 		i++;
 	}
 	dead_check(data, data->philo);
-	exit_launcher(data, data->philo);
+	exit_launcher(data);
 	exit_free(data, NULL);
 }
