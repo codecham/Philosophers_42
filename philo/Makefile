@@ -6,7 +6,7 @@
 #    By: dcorenti <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/18 17:35:30 by dcorenti          #+#    #+#              #
-#    Updated: 2022/03/20 05:05:40 by dcorenti         ###   ########.fr        #
+#    Updated: 2022/08/28 21:31:49 by dcorenti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,12 +41,12 @@ all : $(NAME)
 clean :
 	rm -rf $(OBJS)
 	clear
-	@printf "${CO_RED}${SURPL_O} successfully deleted!${CO_DEFAULT}\n"
+	@printf "${CO_RED}${OBJS} successfully deleted!${CO_DEFAULT}\n"
 
 fclean : clean
 	rm -rf $(NAME)
 	clear
-	@printf "${CO_RED}${SURPL_O}${NAME} successfully deleted!${CO_DEFAULT}\n"
+	@printf "${CO_RED}${OBJS}${NAME} successfully deleted!${CO_DEFAULT}\n"
 
 re : fclean all
 

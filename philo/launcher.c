@@ -6,7 +6,7 @@
 /*   By: dcorenti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/20 05:16:54 by dcorenti          #+#    #+#             */
-/*   Updated: 2022/03/25 00:58:41 by dcorenti         ###   ########.fr       */
+/*   Updated: 2022/08/28 22:05:53 by dcorenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,11 @@ void	exit_launcher(t_data *data)
 	i = 0;
 	while (i <= data->nb_philo)
 	{
+		pthread_detach(data->philo[i].thread_id);
+		i++;
+	}
+	while (i <= data->nb_philo)
+	{
 		pthread_mutex_destroy(&(data->forks[i]));
 		i++;
 	}
@@ -88,6 +93,12 @@ void	launcher(t_data *data)
 		if (pthread_create(&(philo[i].thread_id), NULL, routine, &(philo[i])))
 			exit_free(data, "Error during create thread");
 		philo[i].last_eat = timestamp();
+		i++;
+	}
+	while (i < data->nb_philo)
+	{
+		if (pthread_join(philo[i].thread_id, NULL))
+			exit_free(data, "pthread_join failed");
 		i++;
 	}
 	dead_check(data, data->philo);
